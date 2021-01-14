@@ -15,6 +15,7 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.css">
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -22,7 +23,7 @@
     <body>
         <div id="app">
             {{-- Navigation Component - Top Menu Bar --}}
-            <x-navbar/>
+            <x-navbar></x-navbar>
 
             <!-- Main Content-->
             <main class="container py-4">
@@ -31,7 +32,7 @@
 
             <!-- Footer -->
             <div class="container">
-                <x-footer/>
+                <x-footer></x-footer>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
