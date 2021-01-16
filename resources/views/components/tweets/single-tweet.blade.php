@@ -12,24 +12,8 @@
             <p class="">
                 {{ $tweet->body }}
             </p>
-            <div class="row">
-                {{-- Tweet Like Form --}}
-                <form method="POST" action="#">
-                    @csrf
-                    <button class="btn btn-light btn-sm rounded-pill"
-                            style="padding-top: 0.05em; padding-bottom: 0; font-size: 0.75em; margin-right: 0.5em;">
-                        <i class="far fa-thumbs-up"> <strong>0</strong></i>
-                    </button>
-                </form>
-                {{-- Tweet Dislike Form --}}
-                <form method="POST" action="#">
-                    @csrf
-                    <button class="btn btn-light btn-sm rounded-pill"
-                            style="padding-top: 0.05em; padding-bottom: 0; font-size: 0.75em;">
-                        <i class="far fa-thumbs-down"> <strong>0</strong></i>
-                    </button>
-                </form>
-            </div>
+            <livewire:likecontrol />
+            <small class="float-right">{{ $tweet->created_at->diffForHumans() }}</small>
         </div>
     </div>
 </li>

@@ -19,6 +19,8 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <livewire:styles />
     </head>
     <body>
         <div id="app">
@@ -37,5 +39,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
         <script>bsCustomFileInput.init()</script>
+        <livewire:scripts />
     </body>
 </html>
