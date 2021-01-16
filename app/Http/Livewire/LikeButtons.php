@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class LikeControl extends Component
+class LikeButtons extends Component
 {
     public $likes = 0;
     public $dislikes = 0;
@@ -21,6 +21,6 @@ class LikeControl extends Component
 
     public function render()
     {
-        return view('livewire.likecontrol');
+        return view('livewire.like-buttons');
     }
 }

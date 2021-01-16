@@ -1,18 +1,21 @@
 <x-app>
     <div class="row">
         @foreach($users as $user)
-            <div class="card mb-3">
-                <div class="row no-gutters">
-                    <div class="col-sm-4">
-                        <img src="{{ $user->avatar }}" class="card-img" alt="...">
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="card-body">
-                            <a href="{{ route('profiles.show', $user->username) }}">
-                                <h5 class="card-title">{{ $user->name }}</h5>
-                            </a>
-                            <p class="card-text">{{ $user->presentation }}</p>
-                            <p class="card-text"><small class="text-muted">Joined {{ $user->created_at->diffForHumans() }}</small></p>
+            <div class="col-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="media">
+                            <img src="{{ $user->avatar }}" class="mr-3 rounded-pill" alt="..." style="max-width: 75px;">
+                            <div class="media-body">
+                                <a href="{{ route('profiles.show', $user->username) }}">
+                                    <h5 class="mt-0">{{ $user->name }}</h5>
+                                </a>
+                                <p>
+                                    {{ $user->presentation }}
+                                </p>
+                                <small class="text-muted">Joined {{ $user->created_at->diffForHumans() }}</small>
+                                <button class="btn btn-sm btn-primary float-right">{{ __("Follow") }}</button>
+                            </div>
                         </div>
                     </div>
                 </div>

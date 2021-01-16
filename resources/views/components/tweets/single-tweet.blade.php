@@ -12,7 +12,7 @@
             <p class="">
                 {{ $tweet->body }}
             </p>
-            <livewire:likecontrol />
+            <livewire:like-buttons />
             <small class="float-right">{{ $tweet->created_at->diffForHumans() }}</small>
         </div>
     </div>
