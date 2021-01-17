@@ -14,7 +14,7 @@
                                     {{ $user->presentation }}
                                 </p>
                                 <small class="text-muted">Joined {{ $user->created_at->diffForHumans() }}</small>
-                                <button class="btn btn-sm btn-primary float-right">{{ __("Follow") }}</button>
+                                <livewire:follow-button :user="$user"/>
                             </div>
                         </div>
                     </div>

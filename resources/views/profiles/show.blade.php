@@ -15,17 +15,7 @@
 
             {{-- Only show follow/unfollow on other users profiles --}}
             @unless (current_user()->is($user))
-                @if (current_user()->is_following($user))
-                    <form method="POST" action="{{ route('profiles.unfollow', $user->username) }}">
-                        @csrf
-                        <button class="btn btn-sm btn-primary float-right ml-2">{{ __('Unfollow') }}</button>
-                    </form>
-                @else
-                    <form method="POST" action="{{ route('profiles.follow', $user->username) }}">
-                        @csrf
-                        <button class="btn btn-sm btn-primary float-right ml-2">{{ __('Follow') }}</button>
-                    </form>
-                @endif
+                <livewire:follow-button :user="$user"/>
             @endunless
 
             {{-- Only show edit button if on logged in users profile --}}

@@ -9,7 +9,7 @@
 
         <!-- Following List (right)-->
         <div class="col-md-4 col-xl-3">
-            <x-tweets.following-list/>
+            <livewire:following-list/>
         </div>
 
         <div class="col-xl-1"></div>

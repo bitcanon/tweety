@@ -9,6 +9,9 @@ class LikeButtons extends Component
     public $likes = 0;
     public $dislikes = 0;
 
+    public $user;
+    public $tweet;
+
     public function like()
     {
         $this->likes++;

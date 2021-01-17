@@ -10,7 +10,6 @@
             <a href="{{ route('explore.index') }}" class="list-group-item list-group-item-action border-0 ">
                 {{ __('Click here to Explore users.') }}
             </a>
-
         @endforelse
-        @endauth
+    @endauth
 </div>
