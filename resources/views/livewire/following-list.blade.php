@@ -1,7 +1,7 @@
 <div class="card shadow-sm">
     <h5 class="ml-3 mt-3">Following</h5>
     @auth()
-        @forelse(auth()->user()->follows as $user)
+        @forelse(current_user()->follows as $user)
             <a href="{{ route('profiles.show', $user) }}" class="list-group-item list-group-item-action border-0 tw-list-group-item p-2">
                 <img class="rounded-pill mr-2 ml-1" src="{{ $user->avatar }}" width="40" height="40">
                 {{ $user->name }}

@@ -9,7 +9,7 @@ class ExploreController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::all()->except(current_user()->id);
         return view('explore.index', compact('users'));
     }
 }
