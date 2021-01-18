@@ -3,6 +3,7 @@
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TweetController;
+use App\Http\Livewire\EditProfile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/tweets', [TweetController::class, 'store'])->name('tweets.store');
     Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->name('profiles.show');
     Route::get('/profiles/{user:username}/edit', [ProfileController::class, 'edit'])->name('profiles.edit');
+    Route::get('/profiles/{user:username}/edit2', EditProfile::class);
     Route::patch('/profiles/{user:username}', [ProfileController::class, 'update'])->name('profiles.update');
 
     Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index');

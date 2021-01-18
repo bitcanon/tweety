@@ -3,7 +3,7 @@
         @csrf
         <ul class="list-group">
             <li class="list-group-item">
-                <textarea name="body" class="form-control mb-3" id="bodyTextarea" rows="3" placeholder="What's up doc?"></textarea>
+                <textarea name="body" class="form-control mb-3" id="bodyTextarea" rows="3" placeholder="{{ __("What's on your mind?") }}"></textarea>
                 @error('body')
                 <p class="">{{ $message }}</p>
                 @enderror
