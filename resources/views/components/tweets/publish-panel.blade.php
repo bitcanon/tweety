@@ -9,7 +9,7 @@
                 @enderror
                 <a href="{{ route('profiles.show', current_user()) }}">
                     <img
-                        src="{{ auth()->user()->avatar }}"
+                        src="{{ auth()->user()->avatar_url }}"
                         class="float-left rounded-pill"
                         alt="your avatar"
                         width="40" height="40"

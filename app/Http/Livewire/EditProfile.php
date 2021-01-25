@@ -6,14 +6,17 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditProfile extends Component
 {
+    use WithFileUploads;
+
     public $user;
     public $name = '';
     public $username = '';
     public $email = '';
-    public $avatar = '';
+    public $avatar = null;
     public $presentation = '';
     public $password = '';
     public $passwordConfirmation = '';
@@ -28,14 +31,13 @@ class EditProfile extends Component
             'presentation' => ['string', 'max:255', 'nullable'],
         ]);
     }
-    
+
     public function save()
     {
-         $data = $this->validate([
+        $data = $this->validate([
             'username' => ['required', 'min:3', 'max:32', 'alpha_dash', Rule::unique('users')->ignore($this->user)],
             'name' => ['string', 'required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($this->user)],
-            'avatar' => ['file', 'image'],
             'presentation' => ['string', 'max:255', 'nullable'],
         ]);
 
@@ -46,9 +48,11 @@ class EditProfile extends Component
             $data = array_merge($password_data, $data);
         }
 
-        # Only save the avatar path if one has been uploaded
-        //if ($this->avatar)
-        //    $attributes['avatar'] = $request['avatar']->store('avatars');
+        # Only validate and save the avatar path if one has been uploaded
+        if ($this->avatar) {
+            $this->validate(['avatar' => ['file', 'image', 'max:1000']]);
+            $data['avatar'] = $this->avatar->store('/', 'avatars');
+        }
 
         $this->user->update($data);
     }

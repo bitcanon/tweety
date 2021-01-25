@@ -5,7 +5,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="media">
-                            <img src="{{ $user->avatar }}" class="mr-3 rounded-pill" alt="..." style="max-width: 75px;">
+                            <img src="{{ $user->avatar_url }}" class="mr-3 rounded-pill" alt="..." style="min-width: 75px; max-width: 75px;">
                             <div class="media-body">
                                 <a href="{{ route('profiles.show', $user->username) }}">
                                     <h5 class="mt-0">{{ $user->name }}</h5>

@@ -4,7 +4,7 @@
         <img src="{{ asset('img/bart_falling.png') }}" class="card-img-top" alt="...">
         <div class="card-body">
             <img
-                src="{{ $user->avatar }}"
+                src="{{ $user->avatar_url }}"
                 class="rounded-pill float-left mr-3"
                 alt="your avatar"
                 width="50" height="50"

@@ -3,7 +3,7 @@
     @auth()
         @forelse(current_user()->follows as $user)
             <a href="{{ route('profiles.show', $user) }}" class="list-group-item list-group-item-action border-0 tw-list-group-item p-2">
-                <img class="rounded-pill mr-2 ml-1" src="{{ $user->avatar }}" width="40" height="40">
+                <img class="rounded-pill mr-2 ml-1" src="{{ $user->avatar_url }}" width="40" height="40">
                 {{ $user->name }}
             </a>
         @empty
